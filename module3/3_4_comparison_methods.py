@@ -10,7 +10,7 @@ from functools import total_ordering
 
 class Rectangle:
 
-    def __init__(self, a,b):
+    def __init__(self, a, b):
         self.a = a
         self.b = b
 
@@ -54,10 +54,10 @@ p2 = Point(1, 2)
 # print(p1 == p2)
 # print(p2.__hash__())
 
-# hash есть у неизменяемых объектов (строка, кортеж, число). Те объекты, у которых есть хэш,
+# Hash есть у неизменяемых объектов (строка, кортеж, число). Те объекты, у которых есть хэш,
 # могут использоваться в качестве ключей словаря
 
-# если определен метод __eq__, то теряется возможность нахождения __hash__. Необходимо переопределить __hash__
+# Если определен метод __eq__, то теряется возможность нахождения __hash__. Необходимо переопределить __hash__
 
 
 @total_ordering
@@ -141,7 +141,7 @@ assert not magnus == ian
 assert magnus > ian
 assert not magnus < ian
 assert (magnus < [1, 2]) == 'Невозможно выполнить сравнение'
-#print('Good')
+# print('Good')
 
 
 @total_ordering
@@ -165,7 +165,6 @@ class Rectangle:
             return self.area < other.area
         elif isinstance(other, (int, float)):
             return self.area < other
-
 
 
 r1 = Rectangle(3, 4)
@@ -199,4 +198,3 @@ assert not r2 < r3
 assert r2 >= r3
 assert not r2 <= r3
 print('Good')
-
